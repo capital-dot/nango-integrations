@@ -1,0 +1,16 @@
+name: Deploy Nango Functions
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install -g nango
+      - run: nango deploy
+        env:
+          NANGO_SECRET_KEY_DEV: 4df23527-c0f6-4107-b3ee-1988e014edf1
