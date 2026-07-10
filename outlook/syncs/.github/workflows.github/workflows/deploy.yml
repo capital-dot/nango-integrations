@@ -13,4 +13,4 @@ jobs:
       - run: npm install -g nango
       - run: nango deploy
         env:
-          NANGO_SECRET_KEY_DEV: 4df23527-c0f6-4107-b3ee-1988e014edf1
+          NANGO_SECRET_KEY_DEV: ${{ secrets.NANGO_SECRET_KEY_DEV }}
